@@ -1,0 +1,35 @@
+/* 
+Name: Azul Lanas
+Coding 03
+Purpose: Learning how to use bootstrap */
+
+h2 {
+    text-align: center;
+    margin: .5em;
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+div {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    padding: 1.5em;
+}
+p {
+    padding: 2em;
+}
+input {
+    margin: 1em;
+
+}
+textarea {
+    margin: 1em;
+
+}
+button {
+    min-width: 75%;
+    margin-left: 15%;
+    margin-bottom: 1em;
+}
