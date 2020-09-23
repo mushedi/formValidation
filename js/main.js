@@ -11,7 +11,7 @@ function validateEmail(x){
 }
 
 function validate() {
-    // getting all the variables/elements needed for form validation
+    // getting all the values from the elements needed for form validation
     let fullName = document.getElementById("fullName").value;
     let email1 = document.getElementById("firstEmail").value;
     let email2 = document.getElementById("secondEmail").value;
@@ -32,7 +32,7 @@ function validate() {
     } else if(email1 === email2){
         let verifyEmail = validateEmail(email1);
         if(!verifyEmail){
-            errMsg += "Email entry is not vaild.<br>";
+            errMsg += "Email entries are not vaild.<br>";
         }
     }
 
