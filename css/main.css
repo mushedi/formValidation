@@ -29,7 +29,16 @@ textarea {
 
 }
 button {
-    min-width: 75%;
+    min-width: 80%;
     margin-left: 15%;
     margin-bottom: 1em;
+}
+
+.hidden {
+    display: hidden;
+    color: red;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: auto;
 }
