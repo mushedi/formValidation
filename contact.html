@@ -31,26 +31,26 @@ Purpose: Learning how to use bootstrap -->
             </div>
           </nav>
           <h2>Contact Form</h2>
-          <form action="">
+          <form action="" name="contactForm">
               <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-6 form-group">
-                        <input class="form-control" type="text" placeholder="Full Name">
-                        <input class="form-control" type="text" placeholder="Email">
-                        <input class="form-control" type="text" placeholder="Re-Enter Email">
-                        <input class="form-control" type="text" placeholder="Subject">
+                        <input id="fullName" name="fullName" class="form-control" type="text" placeholder="Full Name" maxlength="64">
+                        <input id="firstEmail" name="firstEmail" class="form-control" type="text" placeholder="Email" maxlength="64">
+                        <input id="secondEmail" name="secondEmail" class="form-control" type="text" placeholder="Re-Enter Email" maxlength="64">
+                        <input id="textSubject" name="textSubject" class="form-control" type="text" placeholder="Subject" maxlength="64">
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
-                        <textarea class="form-control" name="message" cols="30" rows="10" placeholder="Message"></textarea>
+                        <textarea id="formMessage" name="formMessage" class="form-control" name="message" cols="30" rows="10" placeholder="Message" maxlength="100"></textarea>
                     </div>
                 </div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-xs-12 col-md-6 align-self-center">
-                            <button type="button" class="btn btn-lg btn-outline-dark">Clear</button>
+                            <button id="clearBtn" type="button" class="btn btn-lg btn-outline-dark">Clear</button>
                         </div>
                         <div class="col-xs-12 col-md-6 align-self-center">
-                            <button type="button" class="btn btn-lg btn-dark">Send</button>
+                            <button id="sendBtn" type="button" class="btn btn-lg btn-dark">Send</button>
                         </div>
                     </div>
                 </div>
