@@ -3,7 +3,6 @@
 // Date: 09/23/2020
 // Purpose: Form Validation
 
-"use strict";
 
 function validateEmail(x){
     var re =/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;    
@@ -12,13 +11,18 @@ function validateEmail(x){
 
 function validate() {
     // getting all the values from the elements needed for form validation
-    let fullName = document.getElementById("fullName").value;
-    let email1 = document.getElementById("firstEmail").value;
-    let email2 = document.getElementById("secondEmail").value;
-    let subject = document.getElementById("formSubject").value;
-    let message = document.getElementById("formMessage").value;
-    let errMsg = "";
 
+    let fullName = $('#fullName').val().trim();
+    let email1 = $('#firstEmail').val().trim();
+    let email2 = $('#secondEmail').val().trim();
+    let subject = $('#formSubject').val().trim();
+    let message = $('#formMessage').val();
+    let errMsg = '';
+
+    $('#fullName').val(fullName);
+    $('#firstEmail').val(email1);
+    $('#secondEmail').val(email2);
+    $('#formSUbject').val(subject);
 
     // validating input
     if(fullName === ""){
@@ -48,31 +52,26 @@ function validate() {
 }
 
 function clearForm(){
-    document.getElementById("fullName").value = "";
-    document.getElementById("firstEmail").value = "";
-    document.getElementById("secondEmail").value = "";
-    document.getElementById("formSubject").value = "";
-    document.getElementById("formMessage").value = "";
-    document.getElementById("hiddenDiv").innerHTML = "<br>";
+    $('#fullName').val('');
+    $('#firstEmail').val('');
+    $('#secondEmail').val('');
+    $('formSubject').val('');
+    $('formMessage').val('');
+    $('#hiddenDiv').html('<br>');
 }
 
-let sendBtn = document.getElementById("sendBtn");
-
-sendBtn.onclick = function(e) {
-    let hiddenDiv = document.getElementById("hiddenDiv");
-    let check = validate();
-
-    if(check === ""){
+$(document).ready(function (){
+    $('#clearBtn').click(function (){
         clearForm();
-        hiddenDiv.innerHTML = "Sent!"
-    } else {
-        hiddenDiv.innerHTML = check;
-    }
-    
-}
+    });
 
-let clearBtn = document.getElementById("clearBtn");
-
-clearBtn.onclick = function(e) {
-    clearForm();
-}
+    $('#sendBtn').click(function(){
+        let check = validate();
+        if (check === "") {
+            clearForm();
+            $('#hiddenDiv').html('Sent!');
+        } else {
+            $('#hiddenDiv').html(check);
+        }
+    });
+});
