@@ -4,8 +4,8 @@
 // Purpose: Form Validation
 
 
-function validateEmail(x){
-    var re =/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;    
+function validateEmail(x) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(x);
 }
 
@@ -25,47 +25,47 @@ function validate() {
     $('#formSUbject').val(subject);
 
     // validating input
-    if(fullName === ""){
+    if (fullName === "") {
         errMsg += "Full name cannot be empty.<br>";
     }
 
-    if(email1 === "" && email2 === ""){
+    if (email1 === "" && email2 === "") {
         errMsg += "Emails cannot be empty.<br>";
-    } else if(email1 != email2){
+    } else if (email1 != email2) {
         errMsg += "Emails do not match.<br>";
-    } else if(email1 === email2){
+    } else if (email1 === email2) {
         let verifyEmail = validateEmail(email1);
-        if(!verifyEmail){
+        if (!verifyEmail) {
             errMsg += "Email entries are not vaild.<br>";
         }
     }
 
-    if(subject === ""){
+    if (subject === "") {
         errMsg += "Subject cannot be empty. <br>"
     }
 
-    if(message === "") {
+    if (message === "") {
         errMsg += "Message cannot be empty.<br><br>";
     }
 
-    return(errMsg);
+    return (errMsg);
 }
 
-function clearForm(){
+function clearForm() {
     $('#fullName').val('');
     $('#firstEmail').val('');
     $('#secondEmail').val('');
-    $('formSubject').val('');
-    $('formMessage').val('');
+    $('#formSubject').val('');
+    $('#formMessage').val('');
     $('#hiddenDiv').html('<br>');
 }
 
-$(document).ready(function (){
-    $('#clearBtn').click(function (){
+$(document).ready(function () {
+    $('#clearBtn').click(function () {
         clearForm();
     });
 
-    $('#sendBtn').click(function(){
+    $('#sendBtn').click(function () {
         let check = validate();
         if (check === "") {
             clearForm();
